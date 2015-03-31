@@ -1,7 +1,14 @@
+body {
+	background: url('/assets/food.png');
+	font-family: Arial, Helvetica, sans-serif;
+    line-height: 11pt;
+    font-size: 10pt;
+}
+
 .booyah-box {
-	-moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-	-webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-	box-shadow: 1px 1px 2px 0 #d0d0d0;
+	-moz-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
 	background: #fff;
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
@@ -13,4 +20,13 @@
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
+}
+
+.navbar.navbar-inverse {
+	background: url('/assets/fabric2.png');
+	border-radius: 0;
+	border: 0;
+	-moz-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
