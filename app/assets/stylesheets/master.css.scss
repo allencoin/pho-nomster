@@ -50,3 +50,14 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-transition: .5s;
 	transition: .5s;
 }
+
+.pages_container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.pages {
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+}

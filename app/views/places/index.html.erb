@@ -5,3 +5,9 @@
 		<p><%= place.description %></p><br />
 	</div>
 <% end %>
+
+<div class="pages_container col-xs-12">
+<div class="pages">
+<%= paginate @places, :theme => 'twitter-bootstrap-3' %>
+</div>
+</div>

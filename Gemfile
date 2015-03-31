@@ -33,7 +33,12 @@ group :doc do
 end
 
 gem 'bootstrap-sass', '~> 3.3.0'
+
 gem 'autoprefixer-rails'
+
+gem 'kaminari'
+
+gem 'bootstrap-kaminari-views'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
