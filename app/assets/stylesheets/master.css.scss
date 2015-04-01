@@ -51,6 +51,11 @@ h1, h2, h3, h4, h5, h6 {
 	transition: .5s;
 }
 
+.navbar-collapse {
+	border: 0px none;
+	box-shadow: none;
+}
+
 .pages_container {
 	width: 100%;
 	margin: 0 auto;
