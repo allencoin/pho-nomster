@@ -4,4 +4,7 @@ class PlacesController < ApplicationController
 
 		@places = Kaminari.paginate_array(@places).page(params[:page]).per(1)
 	end
+
+	def new
+	end
 end
