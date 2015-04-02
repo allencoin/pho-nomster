@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 	-moz-transition: .25s;
 	-webkit-transition: .25s;
 	transition: .25s;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inverse .navbar-brand:hover {
@@ -52,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-inverse .navbar-brand span {
-	font-size: 20px;
+	font-size: 19px;
 }
 
 .navbar-collapse {
@@ -71,5 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
-
-
+.navbar-inverse .navbar-toggle {
+	background-color: none;
+	border: none;
+}
