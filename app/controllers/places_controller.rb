@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
 	def index
 		@places = Place.order("name")
 
-		@places = Kaminari.paginate_array(@places).page(params[:page]).per(1)
+		@places = Kaminari.paginate_array(@places).page(params[:page]).per(5)
 	end
 
 	def new
