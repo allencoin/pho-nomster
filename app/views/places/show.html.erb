@@ -41,29 +41,55 @@
 		<br /><br />
 		<hr>
 		<div class="clear"></div>
-		<div class="collapse" id="addcomment">
-		<%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+		<div class="text-center">
+		<h2>Comments</h2>
+	</div>
+		<br />
+		<!-- Button trigger modal -->
+		<div class="text-center">
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Add a Comment
+</button>
+		</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a Comment</h4>
+      </div>
+        <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+        <div class="modal-body">
 			<%= f.input :message %>
 			<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
-			<div class="text-center">
+		</div>
+			<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			<%= f.submit "Submit Comment", :class => 'btn btn-primary' %>
 			</div>
 		<% end %>
-		<br /><br /><br />
+    </div>
+  </div>
+</div>
+
+<br />
+			
+			<div class="collapse" id="addcomment">
+			<% @place.comments.each do |comment| %>
+			<div>
+				<blockquote>
+					<% if comment.humanized_rating.present? %>
+					<strong><%= comment.humanized_rating %></strong> -
+					<% end %>
+					<%= comment.message %>
+					<small><%= comment.user.email %></small>
+				</blockquote>
+			</div>
+			<% end %>
 		</div>
-		<a class="btn btn-warning" data-toggle="collapse" data-target="#addcomment">Show/Hide Comment Form</a>
-		<hr>
-		<h2>Comments</h2>
-		<br />
-		<% @place.comments.each do |comment| %>
-		<div>
-			<blockquote>
-				<% if comment.humanized_rating.present? %>
-				<strong><%= comment.humanized_rating %></strong> -
-				<% end %>
-				<%= comment.message %>
-				<small><%= comment.user.email %></small>
-			</blockquote>
-		</div>
-		<% end %>
+		<div class="text-center">
+		<a class="btn btn-warning" data-toggle="collapse" data-target="#addcomment">Show/Hide Comments</a>
+	</div>
 	</div>
