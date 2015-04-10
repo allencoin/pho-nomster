@@ -43,7 +43,7 @@
 		<div class="clear"></div>
 		<div class="text-center">
 		<h2>Comments</h2>
-	</div>
+		</div>
 		<br />
 		<!-- Button trigger modal -->
 		<div class="text-center">
@@ -76,9 +76,10 @@
 
 <br />
 			
-			<div class="collapse" id="addcomment">
+			<div class="collapse" id="showcomments">
 			<% @place.comments.each do |comment| %>
-			<div>
+			<div class="col-xs-12 col-sm-6">
+				<br />
 				<blockquote>
 					<% if comment.humanized_rating.present? %>
 					<strong><%= comment.humanized_rating %></strong> -
@@ -88,8 +89,10 @@
 				</blockquote>
 			</div>
 			<% end %>
+			<div class="clear"></div>
+			<br />
 		</div>
 		<div class="text-center">
-		<a class="btn btn-warning" data-toggle="collapse" data-target="#addcomment">Show/Hide Comments</a>
+		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments">Show/Hide Comments</a>
 	</div>
 	</div>
