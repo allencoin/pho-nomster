@@ -31,7 +31,7 @@
 		<br />
 
 		<% if @place.user.present?%>
-			<small>Submitted by: <%= @place.user.email %></small>
+			<small>Submitted by <%= @place.user.email %></small>
 		<% end %>
 		<div class="pull-right">
 			<% if current_user && current_user == @place.user %>
