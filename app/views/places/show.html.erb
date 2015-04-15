@@ -63,7 +63,7 @@
         <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
         <div class="modal-body">
 			<%= f.input :message %>
-			<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
+			<%= f.input :rating %>
 		</div>
 			<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -81,9 +81,10 @@
 			<div class="col-xs-12 col-sm-6">
 				<br />
 				<blockquote>
-					<% if comment.humanized_rating.present? %>
-					<strong><%= comment.humanized_rating %></strong> -
-					<% end %>
+						<% comment.rating.times do %>
+							<%= "★" %>
+						<% end %>
+						 -
 					<%= comment.message %>
 					<small><%= comment.user.email %></small>
 				</blockquote>
