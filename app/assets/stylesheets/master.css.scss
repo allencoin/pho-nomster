@@ -159,7 +159,8 @@ blockquote em{
 
 
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-  height: 550px;
+  height: 550px; 
+  max-height: 550px;
   width: 100%;
 }
 
