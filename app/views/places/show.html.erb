@@ -48,11 +48,14 @@
 		<!-- Button trigger modal -->
 		<div class="text-center">
 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Add a Comment
+  <span class="glyphicon glyphicon-comment"></span> Add a Comment
+</button>
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+  <span class="glyphicon glyphicon-camera"></span> Add a Photo
 </button>
 		</div>
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -68,6 +71,27 @@
 			<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			<%= f.submit "Submit Comment", :class => 'btn btn-primary' %>
+			</div>
+		<% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Photo Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
+      </div>
+        <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+			<%= f.input :caption %>
+		</div>
+			<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
 			</div>
 		<% end %>
     </div>
@@ -97,13 +121,3 @@
 		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments">Show/Hide Comments</a>
 	</div>
 	</div>
-
-
-
-
-<div>
-<%= simple_form_for @photo, :url => '#' do |f| %>
-	<%= f.input :caption %>
-	<%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
-<% end %>
-</div>
