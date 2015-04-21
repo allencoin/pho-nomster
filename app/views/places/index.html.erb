@@ -40,7 +40,17 @@
 		<h1><%= link_to place.name, place_path(place) %></h1>
 		<em><%= place.address %></em><br /><br />
 		<p><%= place.description %></p><br />
-
+<!-- show photo -->
+    <% if place.photos.last.present? %>
+      <div class="previewpic text-center">
+        <div class="col-xs-10 col-xs-offset-1">
+          <%= image_tag place.photos.last.picture %>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <br />
+    <% end %>
+<!-- end show photo -->
 		<% if place.user.present?%>
 			<small>Submitted by <%= place.user.email %></small>
 		<% end %>
