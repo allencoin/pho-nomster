@@ -120,4 +120,15 @@
 		<div class="text-center">
 		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments">Show/Hide Comments</a>
 	</div>
+<hr />
+	<div class="text-center">
+		<h2>Photos</h2>
 	</div>
+	<br />
+	<% @place.photos.each do |photo| %>
+		<div>
+			<p><%= photo.caption %></p>
+		</div>
+	<% end %>
+
+</div>
