@@ -127,9 +127,10 @@
 	</div>
 	<br />
 	<% @place.photos.each do |photo| %>
-		<div class="col-xs-12 col-sm-6">
-			<p><%= image_tag photo.picture %><br />
-				<%= photo.caption %></p>
+		<div class="text-center col-xs-12 col-sm-6">
+			<%= image_tag photo.picture %>
+			<p><em><%= photo.caption %></em></p>
+			<br />
 		</div>
 	<% end %>
 	<div class="clear"></div>
