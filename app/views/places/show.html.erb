@@ -129,16 +129,18 @@
 <!--button jquery -->
 	<script>
 		$('#showComments').click(function(){
-        var $icon = $(this).find('.glyphicon');
-        if($icon.hasClass('glyphicon-collapse-down')) {
-          $icon.addClass('glyphicon-collapse-up');
-          $icon.removeClass('glyphicon-collapse-down');
-		      $(this).find('.text').text('Hide Comments');
-        } else {
-          $icon.removeClass('glyphicon-collapse-up');
-          $icon.addClass('glyphicon-collapse-down');
-		      $(this).find('.text').text('Show Comments');
-		    }
+        // Could have made an $icon_span, but we only use it once this way
+        $(this).
+          find('.glyphicon').
+          toggleClass('glyphicon-collapse-down glyphicon-collapse-up');
+
+        $text_span = $(this).find('.text');
+
+        if ($text_span.text() === 'Show Comments') {
+          $text_span.text('Hide Comments');
+        } else if ($text_span.text() === 'Hide Comments') {
+          $text_span.text('Show Comments');
+        }
 		});
 	</script>
 <hr />
