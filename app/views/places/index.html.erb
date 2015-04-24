@@ -57,10 +57,8 @@
 				<br />
 				<blockquote>
 					<% if place.comments.last.rating.present? %>
-						<% place.comments.last.rating.times do |i| %>
-						<!-- can't get this to work -->
-							<%= "★" %>
-						<% end %> -
+<!--insert stars logic here-->
+					 [stars] - 
 					<% end %>
 					<%= place.comments.last.message %>
 					<small><%= place.comments.last.user.email %></small>
