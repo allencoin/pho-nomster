@@ -121,16 +121,23 @@
 			<br /><br />
 		</div>
 		<div class="text-center">
-		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments" id="showComments"><span class="glyphicon glyphicon-collapse-down"></span> Show Comments</a>
+      <a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments" id="showComments">
+        <span class="glyphicon glyphicon-collapse-down"></span>
+        <span class="text">Show Comments</span>
+      </a>
 	</div>
 <!--button jquery -->
 	<script>
 		$('#showComments').click(function(){
-		    console.log($(this).text());
-		    if($(this).html().trim() == '<span class="glyphicon glyphicon-collapse-down"></span> Show Comments'){
-		        $(this).html('<span class="glyphicon glyphicon-collapse-up"></span> Hide Comments');
-		    }else{
-		         $(this).html('<span class="glyphicon glyphicon-collapse-down"></span> Show Comments');
+        var $icon = $(this).find('.glyphicon');
+        if($icon.hasClass('glyphicon-collapse-down')) {
+          $icon.addClass('glyphicon-collapse-up');
+          $icon.removeClass('glyphicon-collapse-down');
+		      $(this).find('.text').text('Hide Comments');
+        } else {
+          $icon.removeClass('glyphicon-collapse-up');
+          $icon.addClass('glyphicon-collapse-down');
+		      $(this).find('.text').text('Show Comments');
 		    }
 		});
 	</script>
