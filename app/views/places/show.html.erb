@@ -120,8 +120,19 @@
 			<br />
 		</div>
 		<div class="text-center">
-		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments">Show/Hide Comments</a>
+		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments" id="showComments"><span class="glyphicon glyphicon-collapse-down"></span> Show Comments</a>
 	</div>
+<!--button jquery -->
+	<script>
+		$('#showComments').click(function(){
+		    console.log($(this).text());
+		    if($(this).html().trim() == '<span class="glyphicon glyphicon-collapse-down"></span> Show Comments'){
+		        $(this).html('<span class="glyphicon glyphicon-collapse-up"></span> Hide Comments');
+		    }else{
+		         $(this).html('<span class="glyphicon glyphicon-collapse-down"></span> Show Comments');
+		    }
+		});
+	</script>
 <hr />
 	<div class="text-center">
 		<h2>Photos</h2>
