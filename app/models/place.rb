@@ -6,8 +6,6 @@ class Place < ActiveRecord::Base
 	geocoded_by :address
 	after_validation :geocode
 
-	letsrate_rateable "overall"
-
 	validates :name, :address, :description, :presence => true
 	validates :name, length: { minimum: 3 }
 	validates :description, length: { minimum: 15, maximum: 1000 }
