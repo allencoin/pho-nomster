@@ -133,17 +133,26 @@
 			<br /><br />
 		</div>
 		<div class="text-center">
-		<a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments" id="showComments"><span class="glyphicon glyphicon-collapse-down"></span> Show Comments</a>
+      <a class="btn btn-warning" data-toggle="collapse" data-target="#showcomments" id="showComments">
+        <span class="glyphicon glyphicon-collapse-down"></span>
+        <span class="text">Show Comments</span>
+      </a>
 	</div>
 <!--button jquery -->
 	<script>
 		$('#showComments').click(function(){
-		    console.log($(this).text());
-		    if($(this).html().trim() == '<span class="glyphicon glyphicon-collapse-down"></span> Show Comments'){
-		        $(this).html('<span class="glyphicon glyphicon-collapse-up"></span> Hide Comments');
-		    }else{
-		         $(this).html('<span class="glyphicon glyphicon-collapse-down"></span> Show Comments');
-		    }
+        // Could have made an $icon_span, but we only use it once this way
+        $(this).
+          find('.glyphicon').
+          toggleClass('glyphicon-collapse-down glyphicon-collapse-up');
+
+        $text_span = $(this).find('.text');
+
+        if ($text_span.text() === 'Show Comments') {
+          $text_span.text('Hide Comments');
+        } else if ($text_span.text() === 'Hide Comments') {
+          $text_span.text('Show Comments');
+        }
 		});
 	</script>
 <hr />
